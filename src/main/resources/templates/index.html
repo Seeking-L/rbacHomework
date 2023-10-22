@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head>
+    <title>登录页面</title>
+</head>
+<body>
+<h1>RBAC Homework ---柳景荠</h1>
++---------+-----------+---------------+ <br>
+| user_id | user_name | user_password | <br>
++---------+-----------+---------------+ <br>
+|       1 | reader1   | 123           | <br>
+|       2 | writer1   | 123           | <br>
+|       3 | admin1    | 123           | <br>
++---------+-----------+---------------+ <br>
+<br>
++---------+-----------+------------------+<br>
+| role_id | role_name | role_description |<br>
++---------+-----------+------------------+<br>
+|       1 | reader    | read only        |<br>
+|       2 | writer    | write only       |<br>
+|       3 | admin     | delete only      |<br>
++---------+-----------+------------------+<br>
+<br>
++--------------+---------+---------+<br>
+| user_role_id | user_id | role_id |<br>
++--------------+---------+---------+<br>
+|            1 |       1 |       1 |<br>
+|            2 |       2 |       1 |<br>
+|            3 |       2 |       2 |<br>
+|            4 |       3 |       1 |<br>
+|            5 |       3 |       2 |<br>
+|            6 |       3 |       3 |<br>
++--------------+---------+---------+<br>
+<form th:action="@{/userLog/login}" method="post">
+    <p>用户名：<input type="text" name="username" required></p>
+    <p>密码：<input type="password" name="password" required></p>
+    <p><input type="submit" value="登录"></p>
+</form>
+</body>
+</html>
